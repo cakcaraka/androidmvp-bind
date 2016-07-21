@@ -29,8 +29,10 @@ public class PresenterManager<P extends MvpPresenter> {
 
     public void onAttachedView(MvpView view){
         getPresenter();
-        if (mPresenter != null)
+        if (mPresenter != null) {
             mPresenter.attachView(view);
+            PresenterStorage.getInstance().add(mPresenter);
+        }
     }
 
     public void onDetachedView(boolean isFinishing){
@@ -44,7 +46,6 @@ public class PresenterManager<P extends MvpPresenter> {
 
     public void destroyPresenter(){
         mPresenter.destroy();
-        mPresenter = null;
     }
 
     /**
@@ -71,7 +72,6 @@ public class PresenterManager<P extends MvpPresenter> {
             if(mPresenter == null){     //recreate presenter if not exist in cache
                 mPresenter = mPresenterFactory.createPresenter();
                 mPresenter.create(mPresenterBundle);
-                PresenterStorage.getInstance().add(mPresenter);
             }
         }
         return mPresenter;
