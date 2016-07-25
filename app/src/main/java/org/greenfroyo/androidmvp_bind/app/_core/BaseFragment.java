@@ -13,8 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import com.android.databinding.library.baseAdapters.BR;
-
+import org.greenfroyo.androidmvp_bind.BR;
 import org.greenfroyo.mvp_bind.presenter.PresenterFactory;
 import org.greenfroyo.mvp_bind.presenter.PresenterManager;
 import org.greenfroyo.mvp_bind.util.AppUtil;

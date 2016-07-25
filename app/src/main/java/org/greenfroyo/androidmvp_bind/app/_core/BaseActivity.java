@@ -12,9 +12,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.SparseArray;
 import android.widget.Toast;
 
-import com.android.databinding.library.baseAdapters.BR;
 import com.f2prateek.dart.Dart;
 
+import org.greenfroyo.androidmvp_bind.BR;
 import org.greenfroyo.mvp_bind.presenter.PresenterFactory;
 import org.greenfroyo.mvp_bind.presenter.PresenterManager;
 import org.greenfroyo.mvp_bind.util.ViewServer;
