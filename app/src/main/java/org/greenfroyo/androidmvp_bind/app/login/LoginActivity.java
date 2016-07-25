@@ -4,8 +4,8 @@ import android.databinding.ViewDataBinding;
 import android.view.View;
 
 import org.greenfroyo.androidmvp_bind.R;
-import org.greenfroyo.androidmvp_bind.app._core.toolbar.BaseToolbarActivity;
 import org.greenfroyo.androidmvp_bind.databinding.LoginActivityBinding;
+import org.greenfroyo.baseapp_mvp_bind.app.toolbar.BaseToolbarActivity;
 
 /**
  * Created by fchristysen on 6/29/16.

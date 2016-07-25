@@ -8,9 +8,9 @@ import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
 
 import org.greenfroyo.androidmvp_bind.R;
-import org.greenfroyo.androidmvp_bind.app._core.BaseActivity;
 import org.greenfroyo.androidmvp_bind.app.multitab.lorem.LoremFragment;
 import org.greenfroyo.androidmvp_bind.databinding.MultitabActivityBinding;
+import org.greenfroyo.baseapp_mvp_bind.app.BaseActivity;
 
 /**
  * Created by fchristysen on 6/30/16.

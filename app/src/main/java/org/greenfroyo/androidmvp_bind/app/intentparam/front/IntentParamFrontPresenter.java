@@ -5,9 +5,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 
-import org.greenfroyo.androidmvp_bind.app._core.BasePresenter;
-import org.greenfroyo.androidmvp_bind.app._core.toolbar.BaseToolbarPresenter;
 import org.greenfroyo.androidmvp_bind.app.intentparam.back.Henson;
+import org.greenfroyo.baseapp_mvp_bind.app.toolbar.BaseToolbarPresenter;
 
 /**
  * Created by fchristysen on 6/7/16.

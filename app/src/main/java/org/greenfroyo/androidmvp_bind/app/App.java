@@ -6,18 +6,16 @@ import android.content.res.Resources;
 
 import com.facebook.stetho.Stetho;
 
+import org.greenfroyo.baseapp_mvp_bind.app.BaseApp;
+
 /**
  * Created by fchristysen on 6/7/16.
  */
 
-public class App extends Application {
-    private static Context mContext;
-
+public class App extends BaseApp {
     @Override
     public void onCreate() {
         super.onCreate();
-        mContext = this;
-
         initStetho();
     }
 
@@ -27,11 +25,4 @@ public class App extends Application {
     }
     //endregion
 
-    public static Resources resources(){
-        return mContext.getResources();
-    }
-
-    public static Context context() {
-        return mContext;
-    }
 }

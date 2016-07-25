@@ -2,8 +2,9 @@ package org.greenfroyo.androidmvp_bind.provider.user;
 
 import android.content.Context;
 
-import org.greenfroyo.androidmvp_bind.app.common.CommonTransformer;
-import org.greenfroyo.androidmvp_bind.provider.common.BaseProvider;
+
+import org.greenfroyo.baseapp_mvp_bind.app.BaseProvider;
+import org.greenfroyo.baseapp_mvp_bind.view.recyclerview.CommonTransformer;
 
 import java.util.Random;
 

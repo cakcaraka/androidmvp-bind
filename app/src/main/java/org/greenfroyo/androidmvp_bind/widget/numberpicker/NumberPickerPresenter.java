@@ -1,9 +1,7 @@
 package org.greenfroyo.androidmvp_bind.widget.numberpicker;
 
-import android.os.Bundle;
 
-import org.greenfroyo.androidmvp_bind.app._core.BasePresenter;
-import org.parceler.Parcels;
+import org.greenfroyo.baseapp_mvp_bind.app.BasePresenter;
 
 /**
  * Created by fchristysen on 6/28/16.

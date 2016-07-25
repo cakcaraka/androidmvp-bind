@@ -3,7 +3,7 @@ package org.greenfroyo.androidmvp_bind.app.login;
 import android.databinding.Bindable;
 
 import org.greenfroyo.androidmvp_bind.BR;
-import org.greenfroyo.androidmvp_bind.app._core.toolbar.BaseToolbarViewModel;
+import org.greenfroyo.baseapp_mvp_bind.app.toolbar.BaseToolbarViewModel;
 
 /**
  * Created by fchristysen on 6/29/16.

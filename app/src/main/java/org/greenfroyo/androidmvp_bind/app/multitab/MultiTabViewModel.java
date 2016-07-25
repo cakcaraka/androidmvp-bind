@@ -1,12 +1,10 @@
 package org.greenfroyo.androidmvp_bind.app.multitab;
 
-import android.app.Fragment;
 import android.databinding.Bindable;
 import android.support.v4.view.PagerAdapter;
 
 import org.greenfroyo.androidmvp_bind.BR;
-import org.greenfroyo.androidmvp_bind.app._core.BaseViewModel;
-import org.greenfroyo.androidmvp_bind.app.multitab.lorem.LoremFragment;
+import org.greenfroyo.baseapp_mvp_bind.app.BaseViewModel;
 
 /**
  * Created by fchristysen on 6/30/16.

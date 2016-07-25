@@ -2,13 +2,13 @@ package org.greenfroyo.androidmvp_bind.provider.home;
 
 import android.content.Context;
 
-import org.greenfroyo.androidmvp_bind.app.common.CommonTransformer;
 import org.greenfroyo.androidmvp_bind.app.compoundview.CompoundViewActivity;
 import org.greenfroyo.androidmvp_bind.app.intentparam.front.IntentParamFrontActivity;
 import org.greenfroyo.androidmvp_bind.app.login.LoginActivity;
 import org.greenfroyo.androidmvp_bind.app.multitab.MultiTabActivity;
 import org.greenfroyo.androidmvp_bind.app.twoway.TwoWayActivity;
-import org.greenfroyo.androidmvp_bind.provider.common.BaseProvider;
+import org.greenfroyo.baseapp_mvp_bind.app.BaseProvider;
+import org.greenfroyo.baseapp_mvp_bind.view.recyclerview.CommonTransformer;
 
 import rx.Observable;
 

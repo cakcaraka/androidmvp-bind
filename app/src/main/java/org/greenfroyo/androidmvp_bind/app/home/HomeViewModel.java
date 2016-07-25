@@ -5,8 +5,7 @@ import android.databinding.Bindable;
 import org.greenfroyo.androidmvp_bind.BR;
 import org.greenfroyo.androidmvp_bind.R;
 import org.greenfroyo.androidmvp_bind.app.App;
-import org.greenfroyo.androidmvp_bind.app._core.BaseViewModel;
-import org.greenfroyo.androidmvp_bind.app._core.error.BaseErrorViewModel;
+import org.greenfroyo.baseapp_mvp_bind.app.error.BaseErrorViewModel;
 import org.parceler.Parcel;
 
 import java.util.ArrayList;

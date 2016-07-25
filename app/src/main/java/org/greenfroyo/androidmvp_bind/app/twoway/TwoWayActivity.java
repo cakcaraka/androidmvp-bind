@@ -3,8 +3,8 @@ package org.greenfroyo.androidmvp_bind.app.twoway;
 import android.databinding.ViewDataBinding;
 
 import org.greenfroyo.androidmvp_bind.R;
-import org.greenfroyo.androidmvp_bind.app._core.toolbar.BaseToolbarActivity;
 import org.greenfroyo.androidmvp_bind.databinding.TwoWayActivityBinding;
+import org.greenfroyo.baseapp_mvp_bind.app.toolbar.BaseToolbarActivity;
 
 /**
  * Created by fchristysen on 6/23/16.

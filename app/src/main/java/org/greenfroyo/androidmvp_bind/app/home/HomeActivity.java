@@ -9,12 +9,11 @@ import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
 import org.greenfroyo.androidmvp_bind.R;
-import org.greenfroyo.androidmvp_bind.app._core.error.BaseErrorActivity;
-import org.greenfroyo.androidmvp_bind.app._core.toolbar.BaseToolbarActivity;
-import org.greenfroyo.androidmvp_bind.app.common.BindAdapter;
-import org.greenfroyo.androidmvp_bind.app.common.OnRecyclerItemClickListener;
 import org.greenfroyo.androidmvp_bind.databinding.HomeActivityBinding;
 import org.greenfroyo.androidmvp_bind.databinding.HomeListItemBinding;
+import org.greenfroyo.baseapp_mvp_bind.app.error.BaseErrorActivity;
+import org.greenfroyo.baseapp_mvp_bind.view.recyclerview.BindAdapter;
+import org.greenfroyo.baseapp_mvp_bind.view.recyclerview.OnRecyclerItemClickListener;
 
 /**
  * This activity displays all page in this prototype app

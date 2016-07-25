@@ -6,8 +6,8 @@ import android.os.Bundle;
 import com.f2prateek.dart.InjectExtra;
 
 import org.greenfroyo.androidmvp_bind.R;
-import org.greenfroyo.androidmvp_bind.app._core.toolbar.BaseToolbarActivity;
 import org.greenfroyo.androidmvp_bind.databinding.IntentParamBackActivityBinding;
+import org.greenfroyo.baseapp_mvp_bind.app.toolbar.BaseToolbarActivity;
 
 /**
  * Created by fchristysen on 6/7/16.

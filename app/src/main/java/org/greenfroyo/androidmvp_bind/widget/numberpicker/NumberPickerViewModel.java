@@ -3,7 +3,7 @@ package org.greenfroyo.androidmvp_bind.widget.numberpicker;
 import android.databinding.Bindable;
 
 import org.greenfroyo.androidmvp_bind.BR;
-import org.greenfroyo.androidmvp_bind.app._core.BaseViewModel;
+import org.greenfroyo.baseapp_mvp_bind.app.BaseViewModel;
 import org.parceler.Parcel;
 
 /**

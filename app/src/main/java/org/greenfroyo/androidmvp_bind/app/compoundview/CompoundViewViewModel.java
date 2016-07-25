@@ -1,7 +1,6 @@
 package org.greenfroyo.androidmvp_bind.app.compoundview;
 
-import org.greenfroyo.androidmvp_bind.app._core.BaseViewModel;
-import org.greenfroyo.androidmvp_bind.app._core.toolbar.BaseToolbarViewModel;
+import org.greenfroyo.baseapp_mvp_bind.app.toolbar.BaseToolbarViewModel;
 import org.parceler.Parcel;
 
 /**
