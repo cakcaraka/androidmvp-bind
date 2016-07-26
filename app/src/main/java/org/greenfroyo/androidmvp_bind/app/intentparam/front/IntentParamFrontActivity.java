@@ -1,19 +1,18 @@
 package org.greenfroyo.androidmvp_bind.app.intentparam.front;
 
-import android.databinding.DataBindingUtil;
 import android.databinding.ViewDataBinding;
 import android.os.Bundle;
 import android.view.View;
 
 import org.greenfroyo.androidmvp_bind.R;
-import org.greenfroyo.androidmvp_bind.app._core.BaseActivity;
 import org.greenfroyo.androidmvp_bind.databinding.IntentParamFrontActivityBinding;
+import org.greenfroyo.baseapp_mvp_bind.app.toolbar.BaseToolbarActivity;
 
 /**
  * Created by fchristysen on 6/7/16.
  */
 
-public class IntentParamFrontActivity extends BaseActivity<IntentParamFrontPresenter, IntentParamFrontViewModel> implements View.OnClickListener {
+public class IntentParamFrontActivity extends BaseToolbarActivity<IntentParamFrontPresenter, IntentParamFrontViewModel> implements View.OnClickListener {
     private IntentParamFrontActivityBinding mBinding;
 
     @Override
@@ -28,7 +27,7 @@ public class IntentParamFrontActivity extends BaseActivity<IntentParamFrontPrese
 
     @Override
     protected ViewDataBinding onInitView(IntentParamFrontViewModel viewModel) {
-        mBinding = DataBindingUtil.setContentView(this, R.layout.intent_param_front_activity);
+        mBinding = setBindView(R.layout.intent_param_front_activity);
         mBinding.setViewModel(getPresenter().getViewModel());
         mBinding.setOnClickListener(this);
         return mBinding;

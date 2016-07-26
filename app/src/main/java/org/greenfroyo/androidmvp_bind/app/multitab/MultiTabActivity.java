@@ -8,9 +8,9 @@ import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
 
 import org.greenfroyo.androidmvp_bind.R;
-import org.greenfroyo.androidmvp_bind.app._core.BaseActivity;
 import org.greenfroyo.androidmvp_bind.app.multitab.lorem.LoremFragment;
 import org.greenfroyo.androidmvp_bind.databinding.MultitabActivityBinding;
+import org.greenfroyo.baseapp_mvp_bind.app.BaseActivity;
 
 /**
  * Created by fchristysen on 6/30/16.
@@ -34,7 +34,7 @@ public class MultiTabActivity extends BaseActivity<MultiTabPresenter, MultiTabVi
 
     @Override
     protected ViewDataBinding onInitView(MultiTabViewModel viewModel) {
-        mBinding = DataBindingUtil.setContentView(this, R.layout.multitab_activity);
+        mBinding = setBindView(R.layout.multitab_activity);
         mBinding.setViewModel(viewModel);
         viewModel.setAdapter(new MultiTabAdapter(getSupportFragmentManager(), mPages));
         return mBinding;

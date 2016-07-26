@@ -5,13 +5,13 @@ import android.databinding.Bindable;
 import org.greenfroyo.androidmvp_bind.BR;
 import org.greenfroyo.androidmvp_bind.R;
 import org.greenfroyo.androidmvp_bind.app.App;
-import org.greenfroyo.androidmvp_bind.app._core.BaseViewModel;
+import org.greenfroyo.baseapp_mvp_bind.app.BaseViewModel;
 
 /**
  * Created by fchristysen on 6/30/16.
  */
 
-public class LoremViewModel extends BaseViewModel{
+public class LoremViewModel extends BaseViewModel {
 
     private String mText;
 

@@ -1,4 +1,4 @@
-package org.greenfroyo.androidmvp_bind.app.common;
+package org.greenfroyo.baseapp_mvp_bind.view.recyclerview;
 
 
 import rx.Observable;

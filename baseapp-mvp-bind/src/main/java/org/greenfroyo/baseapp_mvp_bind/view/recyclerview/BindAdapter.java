@@ -1,4 +1,4 @@
-package org.greenfroyo.androidmvp_bind.app.common;
+package org.greenfroyo.baseapp_mvp_bind.view.recyclerview;
 
 import android.content.Context;
 import android.databinding.DataBindingUtil;
@@ -6,7 +6,8 @@ import android.databinding.ViewDataBinding;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
-import org.greenfroyo.androidmvp_bind.BR;
+
+import org.greenfroyo.baseapp_mvp_bind.BR;
 
 import java.util.List;
 

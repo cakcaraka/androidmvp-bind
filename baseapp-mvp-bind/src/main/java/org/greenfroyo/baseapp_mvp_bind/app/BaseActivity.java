@@ -1,6 +1,7 @@
-package org.greenfroyo.androidmvp_bind.app._core;
+package org.greenfroyo.baseapp_mvp_bind.app;
 
 import android.content.Context;
+import android.databinding.DataBindingUtil;
 import android.databinding.Observable;
 import android.databinding.ViewDataBinding;
 import android.os.Bundle;
@@ -10,12 +11,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.SparseArray;
 import android.widget.Toast;
 
-import com.android.databinding.library.baseAdapters.BR;
 import com.f2prateek.dart.Dart;
 
+import org.greenfroyo.baseapp_mvp_bind.BR;
 import org.greenfroyo.mvp_bind.presenter.PresenterFactory;
 import org.greenfroyo.mvp_bind.presenter.PresenterManager;
-import org.greenfroyo.mvp_bind.util.AppUtil;
 import org.greenfroyo.mvp_bind.util.ViewServer;
 import org.greenfroyo.mvp_bind.view.MvpView;
 
@@ -26,7 +26,8 @@ import org.greenfroyo.mvp_bind.view.MvpView;
 public abstract class BaseActivity<P extends BasePresenter<VM>, VM extends BaseViewModel>
         extends AppCompatActivity
         implements MvpView<P, VM>, PresenterFactory<P> {
-    private String TAG;
+
+    private String TAG = this.getClass().getSimpleName();
     protected final String WINDOW_HIERARCHY_TAG = "android:viewHierarchyState";
     protected final String WINDOW_VIEW_TAG = "android:views";
 
@@ -41,16 +42,13 @@ public abstract class BaseActivity<P extends BasePresenter<VM>, VM extends BaseV
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         this.TAG = this.getClass().getSimpleName();
-        AppUtil.log(TAG + " : " + "onCreate");
+        mPresenterManager.onRestoreInstanceState(savedInstanceState);
+        mPropertyChangedCallback = getPropertyChangedCallback();
 
         ViewServer.get(this).addWindow(this);
         Dart.inject(this);
 
-        mPresenterManager.onRestoreInstanceState(savedInstanceState);
-
         mBinding = onInitView(getPresenter().getViewModel());
-
-        mPropertyChangedCallback = getPropertyChangedCallback();
         onInitListener();
     }
 
@@ -94,20 +92,17 @@ public abstract class BaseActivity<P extends BasePresenter<VM>, VM extends BaseV
     }
 
     /**
-     * This will be called if activity's savedInstanceState is not null
-     * Some child view that's not attached yet will need viewState to call onRestoreViewState manually
-     *
+     * This will be called if there is previously saved savedInstanceState
+     * Some child view may not be attached yet to its activity during onRestoreInstanceState
+     * therefore the viewState must be passed manually.
      * @param viewState SparseArray containing all view state in current screen
      */
     protected void onRestoreViewState(@Nullable SparseArray<Parcelable> viewState) {
     }
 
-    ;
-
     @Override
     protected void onResume() {
         super.onResume();
-        AppUtil.log(TAG + " : " + "onResume");
         mPresenterManager.onAttachedView(this);
         getViewModel().addOnPropertyChangedCallback(mPropertyChangedCallback);
     }
@@ -115,7 +110,6 @@ public abstract class BaseActivity<P extends BasePresenter<VM>, VM extends BaseV
     @Override
     protected void onPause() {
         super.onPause();
-        AppUtil.log(TAG + " : " + "onPause");
         mPresenterManager.onDetachedView(isFinishing());
         getViewModel().removeOnPropertyChangedCallback(mPropertyChangedCallback);
     }
@@ -124,7 +118,6 @@ public abstract class BaseActivity<P extends BasePresenter<VM>, VM extends BaseV
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
         mPresenterManager.onSaveInstanceState(outState);
-        AppUtil.log(TAG + " : " + "onSaveInstanceState");
     }
 
     @Override
@@ -139,5 +132,9 @@ public abstract class BaseActivity<P extends BasePresenter<VM>, VM extends BaseV
 
     public VM getViewModel() {
         return getPresenter().getViewModel();
+    }
+
+    public <T extends ViewDataBinding> T setBindView(int layoutId) {
+        return DataBindingUtil.setContentView(this, layoutId, DataBindingUtil.getDefaultComponent());
     }
 }

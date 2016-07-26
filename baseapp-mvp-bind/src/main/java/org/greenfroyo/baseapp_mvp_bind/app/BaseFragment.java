@@ -1,4 +1,4 @@
-package org.greenfroyo.androidmvp_bind.app._core;
+package org.greenfroyo.baseapp_mvp_bind.app;
 
 import android.content.Context;
 import android.databinding.Observable;
@@ -13,11 +13,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import com.android.databinding.library.baseAdapters.BR;
 
+import org.greenfroyo.baseapp_mvp_bind.BR;
 import org.greenfroyo.mvp_bind.presenter.PresenterFactory;
 import org.greenfroyo.mvp_bind.presenter.PresenterManager;
-import org.greenfroyo.mvp_bind.util.AppUtil;
 import org.greenfroyo.mvp_bind.view.MvpView;
 
 /**
@@ -28,7 +27,7 @@ public abstract class BaseFragment<P extends BasePresenter<VM>, VM extends BaseV
         extends Fragment
         implements MvpView<P, VM>, PresenterFactory<P> {
 
-    private String TAG;
+    private String TAG = this.getClass().getSimpleName();
     protected final String WINDOW_HIERARCHY_TAG = "android:viewHierarchyState";
     protected final String WINDOW_VIEW_TAG = "android:views";
 
@@ -42,11 +41,7 @@ public abstract class BaseFragment<P extends BasePresenter<VM>, VM extends BaseV
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        this.TAG = this.getClass().getSimpleName();
-        AppUtil.log(TAG + " : " + "onCreate");
-
         mPresenterManager.onRestoreInstanceState(savedInstanceState);
-
         mPropertyChangedCallback = getPropertyChangedCallback();
     }
 
@@ -77,7 +72,6 @@ public abstract class BaseFragment<P extends BasePresenter<VM>, VM extends BaseV
         return mBinding.getRoot();
     }
 
-
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
@@ -99,12 +93,9 @@ public abstract class BaseFragment<P extends BasePresenter<VM>, VM extends BaseV
     protected void onRestoreViewState(@Nullable SparseArray<Parcelable> viewState) {
     }
 
-    ;
-
     @Override
     public void onResume() {
         super.onResume();
-        AppUtil.log(TAG + " : " + "onAttachedView");
         mPresenterManager.onAttachedView(this);
         getViewModel().addOnPropertyChangedCallback(mPropertyChangedCallback);
     }
@@ -112,7 +103,6 @@ public abstract class BaseFragment<P extends BasePresenter<VM>, VM extends BaseV
     @Override
     public void onPause() {
         super.onPause();
-        AppUtil.log(TAG + " : " + "onDetachedView");
         mPresenterManager.onDetachedView(getActivity().isFinishing());
         getViewModel().removeOnPropertyChangedCallback(mPropertyChangedCallback);
     }
@@ -121,7 +111,6 @@ public abstract class BaseFragment<P extends BasePresenter<VM>, VM extends BaseV
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
         mPresenterManager.onSaveInstanceState(outState);
-        AppUtil.log(TAG + " : " + "onSaveInstanceState");
     }
 
     @Override
